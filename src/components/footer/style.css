@@ -1,0 +1,9 @@
+@import './../../styles/variables.css';
+
+#footer {
+    padding: 8px;
+
+    color: var(--theme-link-color);
+    font-size: 0.8em;
+    line-height: 1em;
+}

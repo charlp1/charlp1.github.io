@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Yuki</title>
+    <meta name="description" content="Yuki's Github Page" />
+
+    <link rel="icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Yuki">
+    <meta name="apple-mobile-web-app-title" content="Yuki">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        html, body {background:#000;}
+    </style>
+    <link rel="preload" as="style" media="screen" href="dist/critical.css"
+        onload="this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="dist/critical.css" />
+    </noscript>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                if (navigator.serviceWorker.controller) {
+                    console.log('Active service worker found.');
+                } else {
+                    navigator.serviceWorker.register('./sw.js').then(
+                        function (reg) {
+                            console.log('Service worker registered.');
+                        }
+                    ).catch(
+                        function (error) {
+                            console.log('Service worker registration failed.');
+                        }
+                    );
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <link rel="preload" as="style" media="screen" href="dist/style.css"
+        onload="this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="dist/style.css" />
+    </noscript>
+
+    <div id="loading-screen">
+        <div class="loading-screen-text">LOADING</div>
+        <noscript>
+            <div id="no-js-text" aria-live="assertive" aria-relevant="text">
+                Please Enable Javascript
+            </div>
+        </noscript>
+        <div class="loading-screen-animation">
+            <div class="animation-line line-1"></div>
+            <div class="animation-line line-2"></div>
+            <div class="animation-line line-3"></div>
+        </div>
+    </div>
+    <div id="app" class="container"></div>
+
+    <script async type="text/javascript" src="dist/fontawesome.bundle.js"></script>
+    <script defer type="text/javascript" src="dist/vendor.bundle.js"></script>
+    <script defer type="text/javascript" src="dist/app.bundle.js"></script>
+</body>
+</html>

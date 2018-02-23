@@ -1,0 +1,143 @@
+@import './variables.css';
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--theme-bg-color-primary);
+
+    color: var(--theme-font-color);
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+h6 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    line-height: 18px;
+    list-style-type: none;
+}
+
+a,
+.link {
+    display: inline-block;
+    color: var(--theme-link-color);
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+}
+
+button {
+    position: relative;
+    padding: 0;
+    color: var(--theme-link-color);
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+}
+
+a:hover,
+.link:hover,
+button:hover {
+    color: var(--theme-link-color-hover);
+}
+
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background: var(--theme-bg-color-primary);
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.loading-screen-text {
+    margin: auto auto 0 auto;
+    border-bottom: 1px solid var(--theme-font-color);
+    letter-spacing: 4px;
+}
+
+.loading-screen-animation {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    margin: 0 auto auto auto;
+}
+
+.animation-line {
+    width: 2px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background: var(--theme-font-color);
+    transform: scaleY(0);
+    animation: animation-rise 2.5s ease infinite;
+}
+.loading-screen-animation .animation-line:nth-child(1) {
+    left: 20%;
+    animation-delay: 0.65s;
+}
+.loading-screen-animation .animation-line:nth-child(2) {
+    left: 50%;
+    animation-delay: 1.3s;
+}
+.loading-screen-animation .animation-line:nth-child(3) {
+    left: 80%;
+    animation-delay: 1.95s;
+}
+
+@keyframes animation-rise {
+    from {
+        transform: scaleY(0.2) translateY(0);
+    }
+    to {
+        transform: scaleY(1) translateY(40px);
+        opacity: 0;
+    }
+}
+
+#no-js-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    left: 50%;
+    margin: -26px 0 0 -100px;
+    text-align: center;
+    background: var(--theme-bg-color-primary);
+}

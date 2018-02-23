@@ -1,0 +1,8 @@
+:root {
+    --theme-bg-color-primary: #000;
+    --theme-bg-color-highlight: #6B92B9;
+
+    --theme-font-color: #FFF;
+    --theme-link-color: #9E9E9E;
+    --theme-link-color-hover: #FFF;
+}

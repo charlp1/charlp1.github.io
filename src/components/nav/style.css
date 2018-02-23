@@ -1,0 +1,46 @@
+@import './../../styles/variables.css';
+
+#nav {
+    padding: 8px;
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--theme-link-color);
+}
+
+.btn-lang::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+.btn-lang-en {
+    padding-right: 10px;
+}
+
+.btn-lang-ja {
+    padding-left: 10px;
+}
+
+.btn-lang-en::before {
+    right: 2px;
+    border-right: 6px solid transparent;
+}
+
+.btn-lang-en:hover::before {
+    border-right-color: var(--theme-link-color-hover);
+}
+
+.btn-lang-ja::before {
+    left: 2px;
+    border-left: 6px solid transparent;
+}
+
+.btn-lang-ja:hover::before {
+    border-left-color: var(--theme-link-color-hover);
+}
